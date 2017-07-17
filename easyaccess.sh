@@ -11,16 +11,16 @@
 #====================================================================================================================
 
 one(){
-	open -a /Applications/Safari.app https://mydesk.autodesk.com
+	open -a /Applications/Safari.app
 }
 two(){
-	open -a /Applications/Safari.app https://share.autodesk.com/Pages/default.aspx
+	open -a /Applications/Safari.app
 }
 three() {
-  open -a /Applications/Safari.app https://www.paylocity.com
+  open -a /Applications/Safari.app
 }
 four(){
-  open -a /Applications/Safari.app https://www.fieldglass.net
+  open -a /Applications/Safari.app
 }
 five(){
 	while true
@@ -29,7 +29,7 @@ five(){
 	done
 }
 six(){
-  open -a /Applications/Safari.app https://s1.ariba.com/gb/?realm=autodesk
+  open -a /Applications/Safari.app
 }
 seven(){
 	while true
@@ -38,24 +38,24 @@ seven(){
 	done
 }
 eight(){
-	open -a /Applications/Safari.app https://wiki.autodesk.com/display/EIS/Spartan+On-boarding
+	open -a /Applications/Safari.app
 }
 nine(){
-	open -a /Applications/Safari.app https://share.autodesk.com/sites/IT/DesktopProductivity/SitePages/Ticket%20Submission.aspx?mobile=0
+	open -a /Applications/Safari.app
 }
 
 #PROJECT
 dds(){
-	open -a /Applications/Safari.app https://wiki.autodesk.com/pages/viewpage.action?pageId=171167041
+	open -a /Applications/Safari.app
 }
 dds-p2(){
-	open -a /Applications/Safari.app https://wiki.autodesk.com/pages/viewpage.action?title=DDS%3A+Digital+Distribution+Systems+Phase+1&spaceKey=EIS
+	open -a /Applications/Safari.app
 }
 ddws(){
-	open -a /Applications/Safari.app https://wiki.autodesk.com/display/EIS/Project%3A+Digital+Distribution+WebServices+DDWS-SG+%3A+PJ71
+	open -a /Applications/Safari.app
 }
 spartan(){
-	open -a /Applications/Safari.app https://wiki.autodesk.com/display/EIS/Project+Spartan
+	open -a /Applications/Safari.app 
 }
 project(){
 	tput clear
