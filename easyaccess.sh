@@ -10,96 +10,99 @@
 #bash_version     :3.2.57(1)-release (x86_64-apple-darwin16)
 #====================================================================================================================
 
+#Fuctions for separate processes
+#You can replace "Safari.app" in "/Applications/Safari.app" with any browser you have in your Applications folder in Mac
 one(){
-	open -a /Applications/Safari.app
+	open -a /Applications/Safari.app #<Enter URL 1 without the brackets>
 }
 two(){
-	open -a /Applications/Safari.app
+	open -a /Applications/Safari.app #<Enter URL 2 without the brackets>
 }
 three() {
-  open -a /Applications/Safari.app
+  open -a /Applications/Safari.app #<Enter URL 3 without the brackets>
 }
 four(){
-  open -a /Applications/Safari.app
+  open -a /Applications/Safari.app #<Enter URL 4 without the brackets>
 }
-five(){
+five(){ # Function for creating a sub menu. This will loop till you select option to go back to Main Menu
 	while true
 	do
 		project
 	done
 }
+#Sample sub menu I used for opening all my gmail accounts with easy one click
 six(){
-  open -a /Applications/Safari.app
-}
-seven(){
 	while true
 	do
 		gmail
 	done
 }
-eight(){
-	open -a /Applications/Safari.app
+
+# Uncomment the below lines to add more functions 
+#eight(){
+#	open -a /Applications/Safari.app
+#}
+#nine(){
+#	open -a /Applications/Safari.app
+#}
+
+#SUB-MENU:  You can create a submenu using the following syntax and entering your customized functions. 
+#           Here first() second() and third() represents the inner options for opening URLs
+first(){
+	open -a /Applications/Safari.app #<Enter URL for first sub option without the brackets>
 }
-nine(){
-	open -a /Applications/Safari.app
+second(){
+	open -a /Applications/Safari.app #<Enter URL for second sub option without the brackets>
+}
+third(){
+	open -a /Applications/Safari.app #<Enter URL for third sub option without the brackets>
 }
 
-#PROJECT
-dds(){
-	open -a /Applications/Safari.app
-}
-dds-p2(){
-	open -a /Applications/Safari.app
-}
-ddws(){
-	open -a /Applications/Safari.app
-}
-spartan(){
-	open -a /Applications/Safari.app 
-}
-project(){
+submenu(){ 
 	tput clear
   echo -e "+----------------------+"
-  echo -e "| AUTODESK EASY ACCESS |"
+  echo -e "|  EASY ACCESS         |"
   echo -e "+----------------------+\n"
-  echo -e "\nSelect Project links:\n"
-  echo "1. DDS "
-	echo "2. DDS Phase-1"
-  echo "3. DDWS"
-	echo "4. Spartan"
-	echo "5. Go to Main Menu"
+  echo -e "\nSelect links:\n" # Read choices
+  echo "1. first "
+  echo "2. second"
+  echo "3. third"
+  echo "4. Go to Main Menu"  # To go back to main menu
   local choice
-	read -n1 -s choice
+	read -n1 -s choice  
 
-  case $choice in
-    1) dds ;;
-    2) dds-p2 ;;
-    3) ddws ;;
-		4) spartan ;;
-		5) break ;;
+  case $choice in # Switch cases for inner options
+    1) first ;;
+    2) second ;;
+    3) third ;;
+    4) break ;; # Break ends the sub menu and go back to main menu
     *) echo -e "${RED}Error...${STD}" && sleep 2
   esac
 }
 
 
-#MAIL
+#SAMPLE sub menu for all my gmail accounts
 mail1(){
-	open -a /Applications/Safari.app 'https://mail.google.com/mail/u/0/#inbox'
+	open -a /Applications/Safari.app # Enter your URL for gmail account 1
 }
 mail2(){
-	open -a /Applications/Safari.app 'https://mail.google.com/mail/u/1/#inbox'
+	open -a /Applications/Safari.app # Enter your URL for gmail account 2
 }
+#You can create more functions like above for adding more accounts
+
+#Gmail sub menu
 gmail(){
 	tput clear
   echo -e "+----------------------+"
-  echo -e "| AUTODESK EASY ACCESS |"
+  echo -e "|      EASY ACCESS.    |"
   echo -e "+----------------------+\n"
   echo -e "\nSelect Your mail account:\n"
-  echo "1. sami.ahmadkhan12@gmail.com"
-	echo "2. skhan75@hawk.iit.edu"
+  echo "1. abc@gmail.com"
+  echo "2. xyz@gmail.com"
   echo "3. Go to Main Menu"
+  
   local choice
-	read -n1 -s choice
+  read -n1 -s choice # read choice
 
   case $choice in
     1) mail1 ;;
@@ -112,18 +115,15 @@ gmail(){
 show_menu(){
   tput clear
   echo -e "+----------------------+"
-  echo -e "| AUTODESK EASY ACCESS |"
+  echo -e "|      EASY ACCESS     |"
   echo -e "+----------------------+\n"
   echo -e "Select application to start\n"
-	echo "1. My Desk"
-	echo "2. Autodesk SharePoint"
-	echo "3. Paylocity"
-  echo "4. Fieldglass"
-  echo "5. Project"
-  echo "6. Ariba Purchase"
-  echo "7. Mails"
-	echo "8. Spartan On-boarding"
-	echo "9. Submit Ticket"
+  echo "1. One"
+  echo "2. Two"
+  echo "3. Three"
+  echo "4. Four"
+  echo "5. Submenu"
+  echo "6. Mails"
   echo -e "\nq. Press 'q' to Quit\n"
 
 }
@@ -134,21 +134,18 @@ read_options(){
 	case $choice in
 		1) one ;;
 		2) two ;;
-    3) three ;;
-    4) four ;;
-    5) five ;;
-    6) six ;;
-    7) seven ;;
-		8) eight ;;
-		9) nine ;;
-	'q') clear && echo -e "\nSystem Exit !\n"  && exit 0 ;;
+    		3) three ;;
+    		4) four ;;
+    		5) five ;;
+    		6) six ;;
+		'q') clear && echo -e "\nSystem Exit !\n"  && exit 0 ;;
 		*) echo -e "${RED}Error...${STD}" && sleep 2
 	esac
 }
 
+# While loop so that the menu stays active till you press to Quit
 while true
 do
-
 	show_menu
 	read_options
 done
